@@ -6,20 +6,20 @@ const MenuCard = ({menuData}) => {
     <>  
     <section className='main-card--cointainer'>
     {menuData.map((currElement)=>{
-
+        const {id,name,category,image,description} = currElement;
         return (
-            <div className="card-container" key={currElement.id}>
+            <div className="card-container" key={id}>
             <div className="card">
                 <div className="card-body">
-                    <span className="card-number card-circle subtle">{currElement.id}</span>
-                    <span className="card-author subtle">{currElement.category}</span>
-                    <h2 className="card-title">{currElement.name}</h2>
+                    <span className="card-number card-circle subtle">{id}</span>
+                    <span className="card-author subtle">{category}</span>
+                    <h2 className="card-title">{name}</h2>
                     <span className="card-description subtle">
-                    {currElement.description}
+                    {description}
                     </span>
                     <div className="card-read">Read</div>
                 </div>
-                <img src={currElement.image} alt="" className="card-media" />
+                <img src={image} alt="" className="card-media" />
                 <span className="card-tag subtle">Order Now</span>
             </div>
             
